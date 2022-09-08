@@ -211,7 +211,7 @@ open class SymbolVisitor(
     private fun handleOptionality(symbol: Symbol, member: MemberShape): Symbol =
         if (config.handleRequired && member.isRequired) {
             symbol
-        } else if (nullableIndex.isNullable(member)) {
+        } else if (nullableIndex.isMemberNullable(member, NullableIndex.CheckMode.CLIENT_ZERO_VALUE_V1_NO_INPUT)) {
             symbol.makeOptional()
         } else {
             symbol

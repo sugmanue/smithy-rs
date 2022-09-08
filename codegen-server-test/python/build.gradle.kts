@@ -26,6 +26,12 @@ configure<software.amazon.smithy.gradle.SmithyExtension> {
 }
 
 buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+    }
+
     val smithyVersion: String by project
     dependencies {
         classpath("software.amazon.smithy:smithy-cli:$smithyVersion")

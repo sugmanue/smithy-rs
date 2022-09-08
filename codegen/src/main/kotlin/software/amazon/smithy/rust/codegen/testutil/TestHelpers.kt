@@ -94,6 +94,14 @@ fun String.asSmithyModel(sourceLocation: String? = null, smithyVersion: String =
         .unwrap()
 }
 
+fun createModelFromLines(vararg lines: String): Model {
+    var source = lines.joinToString(separator = "\n")
+    return Model.assembler()
+        .addUnparsedModel("test.smithy", source)
+        .assemble()
+        .unwrap()
+}
+
 /**
  * In tests, we frequently need to generate a struct, a builder, and an impl block to access said builder.
  */

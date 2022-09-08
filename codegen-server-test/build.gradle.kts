@@ -22,6 +22,12 @@ val pluginName = "rust-server-codegen"
 val workingDirUnderBuildDir = "smithyprojections/codegen-server-test/"
 
 buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+    }
+
     val smithyVersion: String by project
     dependencies {
         classpath("software.amazon.smithy:smithy-cli:$smithyVersion")

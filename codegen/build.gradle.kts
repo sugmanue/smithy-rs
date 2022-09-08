@@ -122,7 +122,7 @@ tasks.dokka {
 }
 
 // Always build documentation
-tasks["build"].finalizedBy(tasks["dokka"])
+// tasks["build"].finalizedBy(tasks["dokka"])
 
 // Configure jacoco (code coverage) to generate an HTML report
 tasks.jacocoTestReport {
